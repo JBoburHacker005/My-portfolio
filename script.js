@@ -215,7 +215,7 @@ function showTechInfo(techName) {
                 <div class="modal-body">
                     <div class="tech-preview">
                         <div class="preview-icon">
-                            <i class="fab fa-${techInfo.icon}"></i>
+                            <i class="${techInfo.iconClass}"></i>
                         </div>
                         <div class="preview-content">
                             <h4>${techInfo.title}</h4>
@@ -252,34 +252,160 @@ function showTechInfo(techName) {
 // Get tech information
 function getTechInfo(techName) {
     const techData = {
-        'Python': {
-            icon: 'python',
-            title: 'Python Programming',
-            description: 'Versatile programming language for web development, data science, and automation.',
-            features: ['Web Development', 'Data Science', 'Machine Learning', 'Automation']
+        // Frontend
+        'HTML5': {
+            iconClass: 'fab fa-html5',
+            title: 'HTML5',
+            description: 'Veb sahifalarning strukturasi va semantikasi uchun asosiy belgilash tili.',
+            features: ['Semantik teglari', 'Media qo‘llab-quvvatlash', 'Formlar', 'SEOga mos']
+        },
+        'CSS3': {
+            iconClass: 'fab fa-css3-alt',
+            title: 'CSS3',
+            description: 'UI dizayn, layout va animatsiyalar uchun zamonaviy uslublash tili.',
+            features: ['Flexbox', 'Grid', 'Animatsiyalar', 'Responsive dizayn']
         },
         'JavaScript': {
-            icon: 'js',
-            title: 'JavaScript Development',
-            description: 'Dynamic programming language for interactive web applications.',
-            features: ['Frontend', 'Backend', 'Mobile Apps', 'Desktop Apps']
+            iconClass: 'fab fa-js',
+            title: 'JavaScript',
+            description: 'Interaktiv veb ilovalar uchun dinamik dasturlash tili.',
+            features: ['DOM manipulyatsiya', 'ES6+', 'Async/Await', 'Fetch/API']
         },
         'React': {
-            icon: 'react',
-            title: 'React Framework',
-            description: 'Modern JavaScript library for building user interfaces.',
-            features: ['Component-based', 'Virtual DOM', 'Hooks', 'Ecosystem']
+            iconClass: 'fab fa-react',
+            title: 'React',
+            description: 'Komponentga asoslangan UI kutubxonasi, virtual DOM va kuchli ekotizim.',
+            features: ['Hooks', 'Component lifecycle', 'Context', 'Router']
         },
+        // Backend
         'Node.js': {
-            icon: 'node-js',
-            title: 'Node.js Runtime',
-            description: 'JavaScript runtime for server-side development.',
-            features: ['Server-side', 'Real-time', 'Microservices', 'NPM']
+            iconClass: 'fab fa-node-js',
+            title: 'Node.js',
+            description: 'Server tomoni uchun JavaScript runtime, tezkor va masshtablanuvchi ilovalar.',
+            features: ['Event-driven', 'NPM ekotizimi', 'REST/API', 'Real-time (Socket)']
+        },
+        'Python': {
+            iconClass: 'fab fa-python',
+            title: 'Python',
+            description: 'Web, ma’lumotlar ilmi va avtomatlashtirish uchun ko‘p qirrali til.',
+            features: ['Django/Flask', 'Data Science', 'AI/ML', 'Automation']
+        },
+        'MongoDB': {
+            iconClass: 'fas fa-database',
+            title: 'MongoDB',
+            description: 'Hujjatga asoslangan NoSQL ma’lumotlar bazasi, moslashuvchan schema.',
+            features: ['Document storage', 'Aggregation', 'Atlas', 'Sharding']
+        },
+        'Express.js': {
+            iconClass: 'fas fa-server',
+            title: 'Express.js',
+            description: 'Node.js uchun minimal va kuchli web-framework.',
+            features: ['Middleware', 'Routing', 'RESTful API', 'Validation']
+        },
+        // AI
+        'TensorFlow': {
+            iconClass: 'fas fa-brain',
+            title: 'TensorFlow',
+            description: 'Google’ning chuqur o‘rganish uchun kutubxonasi va ekotizimi.',
+            features: ['Keras API', 'Model Serving', 'TFLite', 'GPU/TPU']
+        },
+        'PyTorch': {
+            iconClass: 'fas fa-robot',
+            title: 'PyTorch',
+            description: 'Dinamik graflar bilan qulay tadqiqot va ishlab chiqish ML freymvorki.',
+            features: ['Autograd', 'TorchScript', 'Lightning', 'HuggingFace integratsiya']
+        },
+        'scikit-learn': {
+            iconClass: 'fas fa-project-diagram',
+            title: 'scikit-learn',
+            description: 'Klassik ML algoritmlari uchun qulay Python kutubxonasi.',
+            features: ['Classification', 'Regression', 'Clustering', 'Pipelines']
+        },
+        'OpenAI API': {
+            iconClass: 'fas fa-cloud',
+            title: 'OpenAI API',
+            description: 'Til modellari, embeddings, ko‘rsatmaga asoslangan AI va ko‘p agentli yechimlar.',
+            features: ['Chat/Assistants', 'Embeddings', 'RAG', 'Moderation']
+        },
+        // Kiberxavfsizlik
+        'OWASP Top 10': {
+            iconClass: 'fas fa-shield-alt',
+            title: 'OWASP Top 10',
+            description: 'Veb xavfsizligidagi eng asosiy 10 ta risk va ularning mitigatsiyasi.',
+            features: ['Injection', 'Auth muammolari', 'XSS', 'Security misconfig']
+        },
+        'Burp Suite': {
+            iconClass: 'fas fa-bug',
+            title: 'Burp Suite',
+            description: 'Veb ilovalarni pentest qilish uchun professional proxiy va skaner to‘plami.',
+            features: ['Proxy', 'Repeater', 'Intruder', 'Scanner']
+        },
+        'Nmap': {
+            iconClass: 'fas fa-network-wired',
+            title: 'Nmap',
+            description: 'Tarmoq skaneri: portlar, xizmatlar va OS aniqlash.',
+            features: ['Port scan', 'Service detect', 'OS detect', 'NSE skriptlari']
+        },
+        'Metasploit': {
+            iconClass: 'fas fa-skull-crossbones',
+            title: 'Metasploit',
+            description: 'Ekspluatatsiya freymvorki: eksploitlar, payloadlar va post-exploitation.',
+            features: ['Exploit', 'Payload', 'Meterpreter', 'Post modules']
+        },
+        // OS
+        'Windows': {
+            iconClass: 'fab fa-windows',
+            title: 'Windows',
+            description: 'Desktop/server muhiti, AD va PowerShell bilan boshqaruv.',
+            features: ['PowerShell', 'Active Directory', 'IIS', 'WSL']
+        },
+        'macOS': {
+            iconClass: 'fab fa-apple',
+            title: 'macOS',
+            description: 'Apple ekotizimi uchun ishlab chiqish va avtomatlashtirish.',
+            features: ['Xcode', 'Homebrew', 'zsh', 'Automator']
+        },
+        'Linux': {
+            iconClass: 'fab fa-linux',
+            title: 'Linux',
+            description: 'Serverlar va devops uchun asosiy OS; CLI va paket menejerlari.',
+            features: ['Bash', 'Systemd', 'Networking', 'Security']
+        },
+        'Ubuntu': {
+            iconClass: 'fab fa-ubuntu',
+            title: 'Ubuntu',
+            description: 'Server/desktop uchun mashhur Linux distributivi.',
+            features: ['APT', 'Snap', 'Cloud-init', 'LTS qo‘llab-quvvatlash']
+        },
+        // Tools
+        'Git': {
+            iconClass: 'fab fa-git-alt',
+            title: 'Git',
+            description: 'Versiya nazorati va hamkorlik uchun distribyutiv tizim.',
+            features: ['Branching', 'Merge/PR', 'Rebase', 'Hooks']
+        },
+        'Docker': {
+            iconClass: 'fab fa-docker',
+            title: 'Docker',
+            description: 'Ilovalarni konteynerlash va portable tarqatish.',
+            features: ['Dockerfile', 'Compose', 'Registry', 'Best practices']
+        },
+        'AWS': {
+            iconClass: 'fas fa-cloud',
+            title: 'AWS',
+            description: 'Keng qamrovli bulut platformasi: hisoblash, saqlash, tarmoq va AI.',
+            features: ['EC2/S3', 'Lambda', 'RDS', 'IAM']
+        },
+        'VS Code': {
+            iconClass: 'fas fa-code',
+            title: 'VS Code',
+            description: 'Yengil va kuchli dasturlash muhiti, kengaytma ekotizimi bilan.',
+            features: ['Extensions', 'Debugging', 'Git integratsiya', 'Remote Dev']
         }
     };
     
     return techData[techName] || {
-        icon: 'code',
+        iconClass: 'fas fa-code',
         title: techName,
         description: 'Technology and tool for development.',
         features: ['Development', 'Programming', 'Coding', 'Building']
@@ -658,6 +784,14 @@ function initializeSkillItems() {
         
         item.addEventListener('mouseleave', () => {
             item.style.transform = 'scale(1) rotate(0deg)';
+        });
+        
+        // show details on click
+        item.addEventListener('click', () => {
+            const nameEl = item.querySelector('span');
+            if (nameEl) {
+                showTechInfo(nameEl.textContent.trim());
+            }
         });
     });
 }
@@ -1127,6 +1261,9 @@ style.textContent = `
         height: 100%;
         background: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .modal-content {
