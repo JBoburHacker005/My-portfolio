@@ -1441,7 +1441,7 @@ body::before {
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.8rem;
     margin-bottom: 1.5rem;
 }
 
@@ -1492,6 +1492,15 @@ body::before {
 .project-tech .tech-tag i {
     font-size: 0.95rem;
     line-height: 1;
+}
+
+/* favicon icon styles */
+.favicon-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    object-fit: contain;
 }
 
 .project-links {
