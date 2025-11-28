@@ -1348,31 +1348,31 @@ body::before {
 }
 
 /* Dark-mode modern variant for first three project cards */
-.projects-grid .project-card:nth-child(-n+3) .project-header {
+.projects-grid .project-card .project-header {
     text-align: center;
     background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(124, 58, 237, 0.35) 100%);
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-content {
+.projects-grid .project-card .project-content {
     text-align: center;
     background: rgba(15, 17, 26, 0.92);
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-content h3 {
+.projects-grid .project-card .project-content h3 {
     text-align: center;
     color: #e6f3ff;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-content p {
+.projects-grid .project-card .project-content p {
     text-align: center;
     color: #b6c2cf;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-tech {
+.projects-grid .project-card .project-tech {
     justify-content: center;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-links {
+.projects-grid .project-card .project-links {
     justify-content: center;
 }
 
@@ -1388,36 +1388,36 @@ body::before {
     min-width: 130px;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-tech .tech-tag {
+.projects-grid .project-card .project-tech .tech-tag {
     text-align: center;
     background: rgba(2, 6, 23, 0.6);
     color: #a8d8ff;
     border: 1px solid rgba(59, 130, 246, 0.25);
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-tech .tech-tag:hover {
+.projects-grid .project-card .project-tech .tech-tag:hover {
     text-align: center;
     background: linear-gradient(135deg, rgba(14, 165, 233, 0.25) 0%, rgba(124, 58, 237, 0.25) 100%);
     color: #e0f2fe;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-links .btn-view {
+.projects-grid .project-card .project-links .btn-view {
     text-align: center;
     color: #7dd3fc;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-links .btn-view:hover {
+.projects-grid .project-card .project-links .btn-view:hover {
     text-align: center;
     color: #38bdf8;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-links .btn-code {
+.projects-grid .project-card .project-links .btn-code {
     text-align: center;
     border-color: #22d3ee;
     color: #67e8f9;
 }
 
-.projects-grid .project-card:nth-child(-n+3) .project-links .btn-code:hover {
+.projects-grid .project-card .project-links .btn-code:hover {
     text-align: center;
     background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
     color: #001018;
