@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeWeather();
     initializeTechStack();
     initializeProjectCards();
+    initializeProjectLinks();
     initializeSkillItems();
 });
 
@@ -564,6 +565,17 @@ function initializeProjectCards() {
         }, { threshold: 0.1 });
         
         observer.observe(card);
+    });
+}
+
+// Ensure project links open in new tabs
+function initializeProjectLinks() {
+    const projectSectionLinks = document.querySelectorAll('#projects a');
+    projectSectionLinks.forEach(link => {
+        if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
     });
 }
 
